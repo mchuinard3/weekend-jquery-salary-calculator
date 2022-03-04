@@ -4,8 +4,6 @@ function readyNow() {
     console.log('JQ is running');  
 }
 
-let employees = [];
-
 function newEmployee() {
     console.log('in newEmployee:');
     let newEmployeeObject = {
