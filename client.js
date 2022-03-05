@@ -27,7 +27,7 @@ let employeeId = Number($('.employeeId').val());
 let jobTitle = $('.employeeTitle').val();
 let annualSalary = Number($('.annualSalary').val());
 
-$('#employeeInfo').append('<thead><tr><th>${firstName}</th><th>${lastName}</th><th>${employeeId}</th><th>${jobTitle}</th><th>${annualSalary}</th></thead>');
+$('#employeeInfo').append(`<thead><tr><th>${firstName}</th><th>${lastName}</th><th>${employeeId}</th><th>${jobTitle}</th><th>${annualSalary}</th></thead>`);
 newEmployee();
 }
 
