@@ -11,18 +11,6 @@ function readyNow() { // This function lets me know that jQuery is up and runnin
     $('tbody').on('click', '#deleteButton', deleteEmployee); 
 }
 
-function newEmployee(firstName, lastName, employeeId, jobTitle, annualSalary) {
-   
-    let newEmployeeObject = {
-    first: firstName,
-    last: lastName,
-    id: employeeId,
-    title: jobTitle,
-    salary: annualSalary
-    }
-    return newEmployeeObject; 
-}
-
 function addEmployee() { // This function assigns variables with values of the input employee information. It then appends that information to 
     // the DOM to be displayed in the table rows. It then clears the input fields in the DOM. This function then calculates the monthly cost of
     // the employee annual salary that is entered into the table, and displays it on the DOM next to monthly total. Next, this function changes
@@ -49,16 +37,15 @@ function addEmployee() { // This function assigns variables with values of the i
     $('.employeeTitle').val('');
     $('.annualSalary').val('');
 
-    monthlyTotal += Math.floor(annualSalary / 12); 
+    monthlyTotal += (annualSalary / 12); 
     $('.monthlyCost').empty();
-    $('.monthlyCost').append('$', monthlyTotal);
+    $('.monthlyCost').append('$', Math.floor(monthlyTotal));
 
     
     let maximumMonthlyTotal = 20_000;
     if (monthlyTotal > maximumMonthlyTotal) {
         $('.monthlyCost').css('background', '#ff0000');
     }
-    newEmployee(firstName, lastName, employeeId, jobTitle, annualSalary);
     
 }
 
