@@ -5,12 +5,11 @@ let monthlyTotal = 0;
 function readyNow() {
     console.log('JQ is running');
     $('#submitButton').on('click', addEmployee);
-    
+    $('tbody').on('click', '#deleteButton', deleteEmployee); 
 }
 
 function newEmployee(firstName, lastName, employeeId, jobTitle, annualSalary) {
-    console.log('in newEmployee:');
-
+   
     let newEmployeeObject = {
     first: firstName,
     last: lastName,
@@ -29,18 +28,26 @@ function addEmployee() {
     let jobTitle = $('.employeeTitle').val();
     let annualSalary = Number($('.annualSalary').val());
 
-    $('#employeeInfo').append(`<tr><td>${firstName}</td><td>${lastName}</td><td>${employeeId}</td><td>${jobTitle}</td><td>${annualSalary}</td></tr>`);
+    $('#employeeInfo').append(`<tr>
+    <td>${firstName}</td>
+    <td>${lastName}</td>
+    <td>${employeeId}</td>
+    <td>${jobTitle}</td>
+    <td>${annualSalary}</td>
+    <td> <button id="deleteButton"> Delete </button> </td>
+    </tr>`);
+    
     $('.firstName').val('');
     $('.lastName').val('');
     $('.employeeId').val('');
     $('.employeeTitle').val('');
     $('.annualSalary').val('');
 
-    monthlyTotal += Math.round(annualSalary / 12); 
+    monthlyTotal += Math.floor(annualSalary / 12); 
     $('.monthlyCost').empty();
     $('.monthlyCost').append('$', monthlyTotal);
 
-    let redBackground = $('.monthlyCost');
+    
     let maximumMonthlyTotal = 20_000;
     if (monthlyTotal > maximumMonthlyTotal) {
         $('.monthlyCost').css('background', '#ff0000');
@@ -48,6 +55,12 @@ function addEmployee() {
     newEmployee(firstName, lastName, employeeId, jobTitle, annualSalary);
     
 }
+
+function deleteEmployee() {
+   $(this).closest('tr').remove(); 
+}
+
+
 
 
 

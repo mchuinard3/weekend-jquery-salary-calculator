@@ -1,15 +1,11 @@
 h1 {
     text-align: center;
+    background-color: #d8d8d8;
 }
 
 table, td, th {
 border: 1px solid black;
 text-align: center;
-}
-
-.center {
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .centerTotal {
@@ -19,6 +15,12 @@ text-align: center;
 h3 {
     text-align: center;
 }
+
+#border {
+    border: 20px solid black; 
+}
+
+
 
 
 

@@ -8,10 +8,11 @@
     <title>Document</title>
     <script src="jquery-3.6.0.min.js"></script>
     <script src="client.js"></script>
+    <link rel="stylesheet" href="bootstrap.css">
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="border">
     <h1>Salary Calculator</h1>
     <h2>Add Employee</h2>
     <div>
@@ -26,7 +27,7 @@
 
     <main id="container">
 
-        <table class="center">
+        <table class="table table-hover table-bordered table-striped table-dark">
             <thead>
                 <tr>
                     <th>First Name</th>
@@ -40,13 +41,7 @@
 
             </thead>
             <tbody id="employeeInfo"></tbody>
-            <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-            </tr>
+            
             </tbody>
         </table>
 
