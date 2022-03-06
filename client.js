@@ -2,7 +2,10 @@ $(document).ready(readyNow);
 
 let monthlyTotal = 0;
 
-function readyNow() {
+function readyNow() { // This function lets me know that jQuery is up and running, and it makes it so when the user clicks on the submit
+    // button, the addEmployee function will be called and the employee information that has been inputted will be displayed in the table.
+    // It also calls the deleteEmployee function when the delete button is clicked, which will remove the table row of the employee 
+    // information entered on the row that the delete button is clicked. 
     console.log('JQ is running');
     $('#submitButton').on('click', addEmployee);
     $('tbody').on('click', '#deleteButton', deleteEmployee); 
@@ -20,7 +23,10 @@ function newEmployee(firstName, lastName, employeeId, jobTitle, annualSalary) {
     return newEmployeeObject; 
 }
 
-function addEmployee() {
+function addEmployee() { // This function assigns variables with values of the input employee information. It then appends that information to 
+    // the DOM to be displayed in the table rows. It then clears the input fields in the DOM. This function then calculates the monthly cost of
+    // the employee annual salary that is entered into the table, and displays it on the DOM next to monthly total. Next, this function changes
+    // the background color of the monthly total to red if the monthly cost is over $20,000. 
     
     let firstName = $('.firstName').val();
     let lastName = $('.lastName').val();
@@ -56,7 +62,8 @@ function addEmployee() {
     
 }
 
-function deleteEmployee() {
+function deleteEmployee() { // This function removes an employee and all their information from the table row when the delete button is clicked
+    // on a specific row of employee information. 
    $(this).closest('tr').remove(); 
 }
 
