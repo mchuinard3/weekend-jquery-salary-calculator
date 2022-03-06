@@ -36,16 +36,20 @@ function addEmployee() {
     $('.employeeTitle').val('');
     $('.annualSalary').val('');
 
-    monthlyTotal += annualSalary / 12;
+    monthlyTotal += Math.round(annualSalary / 12); 
     $('.monthlyCost').empty();
-    $('.monthlyCost').append(monthlyTotal);
+    $('.monthlyCost').append('$', monthlyTotal);
+
+    let redBackground = $('.monthlyCost');
+    let maximumMonthlyTotal = 20_000;
+    if (monthlyTotal > maximumMonthlyTotal) {
+        $('.monthlyCost').css('background', '#ff0000');
+    }
     newEmployee(firstName, lastName, employeeId, jobTitle, annualSalary);
-    // addMonthlyTotal();
+    
 }
 
-// function addMonthlyTotal() {
-    
-// }
+
 
 
 
