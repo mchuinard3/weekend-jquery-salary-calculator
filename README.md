@@ -28,7 +28,7 @@ The first problem I ran into was not understanding that I needed to use the tr a
 
 - Javascript, jQuery, HTML, CSS, and Bootstrap
 
-## **Acknowledgement**
+## **Acknowledgment**
 
 Credit goes to Prime Digital Academy and my instructor Dane Smith for giving me the instruction and knowledge to make this project possible.
 
